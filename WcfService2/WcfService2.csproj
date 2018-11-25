@@ -64,8 +64,8 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="book.html" />
-    <Content Include="character.html" />
+    <Content Include="books.aspx" />
+    <Content Include="houses.aspx" />
     <Content Include="desktop.css" />
     <Content Include="index.html" />
     <Content Include="scripting.js" />
@@ -73,6 +73,22 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="book.cs" />
+    <Compile Include="books.aspx.cs">
+      <DependentUpon>books.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="books.aspx.designer.cs">
+      <DependentUpon>books.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="houses.aspx.cs">
+      <DependentUpon>houses.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="houses.aspx.designer.cs">
+      <DependentUpon>houses.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="house.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
