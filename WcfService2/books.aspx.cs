@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -25,13 +26,28 @@ namespace WcfService2
         public string GetTableData()
         {
             string htmlStr = "";
-            //List<string> bookNames = new List<string>();
             foreach (var book in Books)
             {
+                if (string.IsNullOrEmpty(book.name))
+                {
+                    book.name = "Not Available";
+                }
+                if (string.IsNullOrEmpty(book.isbn))
+                {
+                    book.isbn = "Not Available";
+                }
+                if (string.IsNullOrEmpty(book.country))
+                {
+                    book.country = "Not Available";
+                }
+                if (string.IsNullOrEmpty(book.mediaType))
+                {
+                    book.mediaType = "Not Available";
+                }
                 htmlStr += "<tr>" +
                     "<td>" + book.name + "</td>" +
                     "<td>" + book.isbn + "</td>" +
-                    "<td>" + book.authors.FirstOrDefault() + "</td>" +
+                    "<td>" + GetAuthorsList(book.authors) + "</td>" +
                     "<td>" + book.numberOfPages + "</td>" +
                     "<td>" + book.publisher + "</td>" +
                     "<td>" + book.country + "</td>" +
@@ -43,12 +59,46 @@ namespace WcfService2
             return htmlStr;
         }
 
+        private string GetAuthorsList(List<string> list)
+        {
+            StringBuilder listString = new StringBuilder();
+            listString.Append("<ul>");
+            foreach (var item in list)
+            {
+                if (!String.IsNullOrEmpty(item))
+                {
+                    listString.Append("<li>");
+                    listString.Append(item);
+                    listString.Append("</li>");
+                }
+                else
+                {
+                    listString.Append("Not Available");
+                }
+            }
+            listString.Append("</ul>");
+
+            return listString.ToString();
+        }
+
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            var bookName = TxtBookName.Text;
-            var publisher = TxtPublisher.Text;
-            var isbn = TxtBoxIsbn.Text;
-            Books = Books.Where(b => b.name.Contains(bookName)|| b.publisher.Contains(publisher) || b.isbn.Contains(isbn)).ToList();
+            var bookName = TxtBookName.Text.ToLower();
+            var publisher = TxtPublisher.Text.ToLower();
+            var isbn = TxtIsbn.Text.ToLower();
+
+            if (!string.IsNullOrEmpty(bookName))
+            {
+                Books = Books.Where(b => b.name.ToLower().Contains(bookName)).ToList();
+            }
+            if (!string.IsNullOrEmpty(publisher))
+            {
+                Books.AddRange(Books.Where(b => b.publisher.ToLower().Contains(publisher)).ToList());
+            }
+            if (!string.IsNullOrEmpty(isbn))
+            {
+                Books.AddRange(Books.Where(b => b.isbn.ToLower().Contains(isbn)).ToList());
+            }
         }
     }
 }

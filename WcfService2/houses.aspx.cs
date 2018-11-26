@@ -28,19 +28,35 @@ namespace WcfService2
             string htmlStr = "";
             foreach (var house in Houses)
             {
+                if (string.IsNullOrEmpty(house.name))
+                {
+                    house.name = "Not Available";
+                }
+                if (string.IsNullOrEmpty(house.region))
+                {
+                    house.region = "Not Available";
+                }
+                if (string.IsNullOrEmpty(house.coatOfArms))
+                {
+                    house.coatOfArms = "Not Available";
+                }
+                if (string.IsNullOrEmpty(house.words))
+                {
+                    house.words = "Not Available";
+                }
                 htmlStr += "<tr>" +
                     "<td>" + house.name + "</td>" +
                     "<td>" + house.region + "</td>" +
                     "<td>" + house.coatOfArms + "</td>" +
                     "<td>" + house.words + "</td>" +
-                    "<td>" + GetStringList(house.seats) + "</td>" +
+                    "<td>" + GetSeatsList(house.seats) + "</td>" +
                     "</tr>";
             }
 
             return htmlStr;
         }
 
-        private string GetStringList(List<string> list)
+        private string GetSeatsList(List<string> list)
         {
             StringBuilder listString = new StringBuilder();
             listString.Append("<ul>");
@@ -64,13 +80,26 @@ namespace WcfService2
 
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
-            var houseName = TxtHouseName.Text;
-            var region = TxtRegion.Text;
-            var coatOfArms = TxtCoatOfArms.Text;
-            var words = TxtWords.Text;
-            var seats = TxtSeats.Text;
-            Houses = Houses.Where(b => b.name.Contains(houseName) || b.region.Contains(region) || 
-            b.coatOfArms.Contains(coatOfArms) || b.words.Contains(words) || b.seats.Contains(seats)).ToList();
+            var houseName = TxtHouseName.Text.ToLower();
+            var region = TxtRegion.Text.ToLower();
+            var coatOfArms = TxtCoatOfArms.Text.ToLower();
+            var words = TxtWords.Text.ToLower();
+            if (!string.IsNullOrEmpty(houseName))
+            {
+                Houses = Houses.Where(b => b.name.ToLower().Contains(houseName)).ToList();
+            }
+            if (!string.IsNullOrEmpty(region))
+            {
+                Houses = Houses.Where(b => b.region.ToLower().Contains(region)).ToList();
+            }
+            if (!string.IsNullOrEmpty(coatOfArms))
+            {
+                Houses = Houses.Where(b => b.coatOfArms.ToLower().Contains(coatOfArms)).ToList();
+            }
+            if (!string.IsNullOrEmpty(words))
+            {
+                Houses = Houses.Where(b => b.words.ToLower().Contains(words)).ToList();
+            }
         }
     }
 }

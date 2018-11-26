@@ -15,7 +15,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/index.html">Home</a>
         <a href="/books.aspx">Search Book</a>
-        <a href="/houses.aspx">Search Character</a>
+        <a href="/houses.aspx">Search Houses</a>
     </div>
     <div id="main">
         <div>
@@ -25,21 +25,22 @@
         <div class="filter">
             <form id="form1" runat="server">
                 <div>
-                    <label for="TxtHouseName">House Name</label>
+                    <label for="TxtHouseName">Search By House Name</label>
                     <asp:TextBox ID="TxtHouseName" runat="server"></asp:TextBox>
-
-                    <label for="TxtRegion">Region</label>
+                    <label for="TxtHouseName"> OR </label>
+               
+                    <label for="TxtRegion"> Search By Region</label>
                     <asp:TextBox ID="TxtRegion" runat="server"></asp:TextBox>
-
-                    <label for="TxtCoatOfArms">Coat Of Arms</label>
+                    <label for="TxtRegion"> OR </label>
+               
+                    <label for="TxtCoatOfArms">Search By Coat Of Arms</label>
                     <asp:TextBox ID="TxtCoatOfArms" runat="server"></asp:TextBox>
-
-                    <label for="TxtWords">Words</label>
+                    <label for="TxtCoatOfArms"> OR </label>
+               
+                    <label for="TxtWords">Search By Words</label>
                     <asp:TextBox ID="TxtWords" runat="server"></asp:TextBox>
-
-                    <label for="TxtSeats">Seats</label>
-                    <asp:TextBox ID="TxtSeats" runat="server"></asp:TextBox>
-
+                    <label for="TxtWords"> OR </label>
+               
                     <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
                 </div>
             </form>

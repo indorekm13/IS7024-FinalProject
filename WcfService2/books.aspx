@@ -15,7 +15,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/index.html">Home</a>
         <a href="/books.aspx">Search Book</a>
-        <a href="/houses.aspx">Search Character</a>
+        <a href="/houses.aspx">Search Houses</a>
     </div>
     <div id="main">
         <div>
@@ -25,14 +25,16 @@
         <div class="filter">
             <form id="form1" runat="server">
                 <div>
-                    <label for="bookname">Book Name</label>
+                    <label for="bookname">Search By Book Name</label>
                     <asp:TextBox ID="TxtBookName" runat="server"></asp:TextBox>
-
-                    <label for="publisher">Publisher</label>
+                    <label for="bookName"> OR </label>
+]
+                    <label for="TxtPublisher">Search By Publisher</label>
                     <asp:TextBox ID="TxtPublisher" runat="server"></asp:TextBox>
+                    <label for="TxtPublisher"> OR </label>
 
-                    <label for="isbn">ISBN</label>
-                    <asp:TextBox ID="TxtBoxIsbn" runat="server"></asp:TextBox>
+                    <label for="TxtIsbn">Search By ISBN</label>
+                    <asp:TextBox ID="TxtIsbn" runat="server"></asp:TextBox>
 
                     <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
                 </div>

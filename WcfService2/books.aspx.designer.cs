@@ -40,13 +40,13 @@ namespace WcfService2 {
         protected global::System.Web.UI.WebControls.TextBox TxtPublisher;
         
         /// <summary>
-        /// TxtBoxIsbn control.
+        /// TxtIsbn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtBoxIsbn;
+        protected global::System.Web.UI.WebControls.TextBox TxtIsbn;
         
         /// <summary>
         /// ButtonSubmit control.
