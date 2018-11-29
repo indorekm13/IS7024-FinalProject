@@ -139,3 +139,21 @@ table th {
             font-size: 18px;
         }
 }
+
+#form1 {
+    margin: 100px 0 0 100px;
+}
+
+#form1 label {
+    width: 100px;
+    display: inline-block;
+}
+
+#firstName, #lastName {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#ButtonSubmit {
+    margin-bottom: 20px;
+}
