@@ -87,18 +87,8 @@ namespace WcfService2
             var publisher = TxtPublisher.Text.ToLower();
             var isbn = TxtIsbn.Text.ToLower();
 
-            if (!string.IsNullOrEmpty(bookName))
-            {
-                Books = Books.Where(b => b.name.ToLower().Contains(bookName)).ToList();
-            }
-            if (!string.IsNullOrEmpty(publisher))
-            {
-                Books.AddRange(Books.Where(b => b.publisher.ToLower().Contains(publisher)).ToList());
-            }
-            if (!string.IsNullOrEmpty(isbn))
-            {
-                Books.AddRange(Books.Where(b => b.isbn.ToLower().Contains(isbn)).ToList());
-            }
+            Books = Books.Where(b => (b.name.ToLower().Contains(bookName) && b.publisher.ToLower().Contains(publisher)
+             && b.isbn.ToLower().Contains(isbn))).ToList();
         }
     }
 }

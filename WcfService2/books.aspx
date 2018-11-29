@@ -27,11 +27,11 @@
                 <div>
                     <label for="bookname">Search By Book Name</label>
                     <asp:TextBox ID="TxtBookName" runat="server"></asp:TextBox>
-                    <label for="bookName"> OR </label>
-]
+                   
+
                     <label for="TxtPublisher">Search By Publisher</label>
                     <asp:TextBox ID="TxtPublisher" runat="server"></asp:TextBox>
-                    <label for="TxtPublisher"> OR </label>
+                  
 
                     <label for="TxtIsbn">Search By ISBN</label>
                     <asp:TextBox ID="TxtIsbn" runat="server"></asp:TextBox>

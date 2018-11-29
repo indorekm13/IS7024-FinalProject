@@ -84,22 +84,8 @@ namespace WcfService2
             var region = TxtRegion.Text.ToLower();
             var coatOfArms = TxtCoatOfArms.Text.ToLower();
             var words = TxtWords.Text.ToLower();
-            if (!string.IsNullOrEmpty(houseName))
-            {
-                Houses = Houses.Where(b => b.name.ToLower().Contains(houseName)).ToList();
-            }
-            if (!string.IsNullOrEmpty(region))
-            {
-                Houses = Houses.Where(b => b.region.ToLower().Contains(region)).ToList();
-            }
-            if (!string.IsNullOrEmpty(coatOfArms))
-            {
-                Houses = Houses.Where(b => b.coatOfArms.ToLower().Contains(coatOfArms)).ToList();
-            }
-            if (!string.IsNullOrEmpty(words))
-            {
-                Houses = Houses.Where(b => b.words.ToLower().Contains(words)).ToList();
-            }
+            Houses = Houses.Where(h => (h.name.ToLower().Contains(houseName) && h.region.ToLower().Contains(region)
+             && h.coatOfArms.ToLower().Contains(coatOfArms) && h.words.ToLower().Contains(words))).ToList();
         }
     }
 }
