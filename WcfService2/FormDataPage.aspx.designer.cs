@@ -11,18 +11,16 @@
 namespace WcfService2 {
 	
 	
-	public partial class houses {
+	public partial class FormDataPage {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
-		protected System.Web.UI.WebControls.TextBox TxtHouseName;
+		protected System.Web.UI.WebControls.TextBox firstName;
 		
-		protected System.Web.UI.WebControls.TextBox TxtRegion;
-		
-		protected System.Web.UI.WebControls.TextBox TxtCoatOfArms;
-		
-		protected System.Web.UI.WebControls.TextBox TxtWords;
+		protected System.Web.UI.WebControls.TextBox lastName;
 		
 		protected System.Web.UI.WebControls.Button ButtonSubmit;
+		
+		protected System.Web.UI.WebControls.TextBox DisplayData;
 	}
 }
