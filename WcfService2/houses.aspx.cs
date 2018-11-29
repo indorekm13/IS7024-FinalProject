@@ -26,31 +26,38 @@ namespace WcfService2
         public string GetTableData()
         {
             string htmlStr = "";
-            foreach (var house in Houses)
+            if (Houses.Any())
             {
-                if (string.IsNullOrEmpty(house.name))
+                foreach (var house in Houses)
                 {
-                    house.name = "Not Available";
+                    if (string.IsNullOrEmpty(house.name))
+                    {
+                        house.name = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(house.region))
+                    {
+                        house.region = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(house.coatOfArms))
+                    {
+                        house.coatOfArms = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(house.words))
+                    {
+                        house.words = "Not Available";
+                    }
+                    htmlStr += "<tr>" +
+                        "<td>" + house.name + "</td>" +
+                        "<td>" + house.region + "</td>" +
+                        "<td>" + house.coatOfArms + "</td>" +
+                        "<td>" + house.words + "</td>" +
+                        "<td>" + GetSeatsList(house.seats) + "</td>" +
+                        "</tr>";
                 }
-                if (string.IsNullOrEmpty(house.region))
-                {
-                    house.region = "Not Available";
-                }
-                if (string.IsNullOrEmpty(house.coatOfArms))
-                {
-                    house.coatOfArms = "Not Available";
-                }
-                if (string.IsNullOrEmpty(house.words))
-                {
-                    house.words = "Not Available";
-                }
-                htmlStr += "<tr>" +
-                    "<td>" + house.name + "</td>" +
-                    "<td>" + house.region + "</td>" +
-                    "<td>" + house.coatOfArms + "</td>" +
-                    "<td>" + house.words + "</td>" +
-                    "<td>" + GetSeatsList(house.seats) + "</td>" +
-                    "</tr>";
+            }
+            else
+            {
+                htmlStr = "<tr><td colspan=8> NO DATA FOUND </td></tr> ";
             }
 
             return htmlStr;

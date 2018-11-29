@@ -26,34 +26,41 @@ namespace WcfService2
         public string GetTableData()
         {
             string htmlStr = "";
-            foreach (var book in Books)
+            if (Books.Any())
             {
-                if (string.IsNullOrEmpty(book.name))
+                foreach (var book in Books)
                 {
-                    book.name = "Not Available";
+                    if (string.IsNullOrEmpty(book.name))
+                    {
+                        book.name = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(book.isbn))
+                    {
+                        book.isbn = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(book.country))
+                    {
+                        book.country = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(book.mediaType))
+                    {
+                        book.mediaType = "Not Available";
+                    }
+                    htmlStr += "<tr>" +
+                        "<td>" + book.name + "</td>" +
+                        "<td>" + book.isbn + "</td>" +
+                        "<td>" + GetAuthorsList(book.authors) + "</td>" +
+                        "<td>" + book.numberOfPages + "</td>" +
+                        "<td>" + book.publisher + "</td>" +
+                        "<td>" + book.country + "</td>" +
+                        "<td>" + book.mediaType + "</td>" +
+                        "<td>" + book.released.ToShortDateString() + "</td>" +
+                        "</tr>";
                 }
-                if (string.IsNullOrEmpty(book.isbn))
-                {
-                    book.isbn = "Not Available";
-                }
-                if (string.IsNullOrEmpty(book.country))
-                {
-                    book.country = "Not Available";
-                }
-                if (string.IsNullOrEmpty(book.mediaType))
-                {
-                    book.mediaType = "Not Available";
-                }
-                htmlStr += "<tr>" +
-                    "<td>" + book.name + "</td>" +
-                    "<td>" + book.isbn + "</td>" +
-                    "<td>" + GetAuthorsList(book.authors) + "</td>" +
-                    "<td>" + book.numberOfPages + "</td>" +
-                    "<td>" + book.publisher + "</td>" +
-                    "<td>" + book.country + "</td>" +
-                    "<td>" + book.mediaType + "</td>" +
-                    "<td>" + book.released.ToShortDateString() + "</td>" +
-                    "</tr>";
+            }
+            else
+            {
+                htmlStr = "<tr><td colspan=8> NO DATA FOUND </td></tr> ";
             }
 
             return htmlStr;
