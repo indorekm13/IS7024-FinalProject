@@ -28,31 +28,31 @@ namespace WcfService2
             string htmlStr = "";
             foreach (var book in Books)
             {
-                if (string.IsNullOrEmpty(book.name))
+                if (string.IsNullOrEmpty(book.Name))
                 {
-                    book.name = "Not Available";
+                    book.Name = "Not Available";
                 }
-                if (string.IsNullOrEmpty(book.isbn))
+                if (string.IsNullOrEmpty(book.Isbn))
                 {
-                    book.isbn = "Not Available";
+                    book.Isbn = "Not Available";
                 }
-                if (string.IsNullOrEmpty(book.country))
+                if (string.IsNullOrEmpty(book.Country))
                 {
-                    book.country = "Not Available";
+                    book.Country = "Not Available";
                 }
-                if (string.IsNullOrEmpty(book.mediaType))
+                if (string.IsNullOrEmpty(book.MediaType))
                 {
-                    book.mediaType = "Not Available";
+                    book.MediaType = "Not Available";
                 }
                 htmlStr += "<tr>" +
-                    "<td>" + book.name + "</td>" +
-                    "<td>" + book.isbn + "</td>" +
-                    "<td>" + GetAuthorsList(book.authors) + "</td>" +
-                    "<td>" + book.numberOfPages + "</td>" +
-                    "<td>" + book.publisher + "</td>" +
-                    "<td>" + book.country + "</td>" +
-                    "<td>" + book.mediaType + "</td>" +
-                    "<td>" + book.released.ToShortDateString() + "</td>" +
+                    "<td>" + book.Name + "</td>" +
+                    "<td>" + book.Isbn + "</td>" +
+                    "<td>" + GetAuthorsList(book.Authors) + "</td>" +
+                    "<td>" + book.NumberOfPages + "</td>" +
+                    "<td>" + book.Publisher + "</td>" +
+                    "<td>" + book.Country + "</td>" +
+                    "<td>" + book.MediaType + "</td>" +
+                    "<td>" + book.Released.ToShortDateString() + "</td>" +
                     "</tr>";
             }
 
@@ -89,15 +89,15 @@ namespace WcfService2
 
             if (!string.IsNullOrEmpty(bookName))
             {
-                Books = Books.Where(b => b.name.ToLower().Contains(bookName)).ToList();
+                Books = Books.Where(b => b.Name.ToLower().Contains(bookName)).ToList();
             }
             if (!string.IsNullOrEmpty(publisher))
             {
-                Books.AddRange(Books.Where(b => b.publisher.ToLower().Contains(publisher)).ToList());
+                Books.AddRange(Books.Where(b => b.Publisher.ToLower().Contains(publisher)).ToList());
             }
             if (!string.IsNullOrEmpty(isbn))
             {
-                Books.AddRange(Books.Where(b => b.isbn.ToLower().Contains(isbn)).ToList());
+                Books.AddRange(Books.Where(b => b.Isbn.ToLower().Contains(isbn)).ToList());
             }
         }
     }

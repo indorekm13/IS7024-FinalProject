@@ -28,28 +28,28 @@ namespace WcfService2
             string htmlStr = "";
             foreach (var house in Houses)
             {
-                if (string.IsNullOrEmpty(house.name))
+                if (string.IsNullOrEmpty(house.Name))
                 {
-                    house.name = "Not Available";
+                    house.Name = "Not Available";
                 }
-                if (string.IsNullOrEmpty(house.region))
+                if (string.IsNullOrEmpty(house.Region))
                 {
-                    house.region = "Not Available";
+                    house.Region = "Not Available";
                 }
-                if (string.IsNullOrEmpty(house.coatOfArms))
+                if (string.IsNullOrEmpty(house.CoatOfArms))
                 {
-                    house.coatOfArms = "Not Available";
+                    house.CoatOfArms = "Not Available";
                 }
-                if (string.IsNullOrEmpty(house.words))
+                if (string.IsNullOrEmpty(house.Words))
                 {
-                    house.words = "Not Available";
+                    house.Words = "Not Available";
                 }
                 htmlStr += "<tr>" +
-                    "<td>" + house.name + "</td>" +
-                    "<td>" + house.region + "</td>" +
-                    "<td>" + house.coatOfArms + "</td>" +
-                    "<td>" + house.words + "</td>" +
-                    "<td>" + GetSeatsList(house.seats) + "</td>" +
+                    "<td>" + house.Name + "</td>" +
+                    "<td>" + house.Region + "</td>" +
+                    "<td>" + house.CoatOfArms + "</td>" +
+                    "<td>" + house.Words + "</td>" +
+                    "<td>" + GetSeatsList(house.Seats) + "</td>" +
                     "</tr>";
             }
 
@@ -86,19 +86,19 @@ namespace WcfService2
             var words = TxtWords.Text.ToLower();
             if (!string.IsNullOrEmpty(houseName))
             {
-                Houses = Houses.Where(b => b.name.ToLower().Contains(houseName)).ToList();
+                Houses = Houses.Where(b => b.Name.ToLower().Contains(houseName)).ToList();
             }
             if (!string.IsNullOrEmpty(region))
             {
-                Houses = Houses.Where(b => b.region.ToLower().Contains(region)).ToList();
+                Houses = Houses.Where(b => b.Region.ToLower().Contains(region)).ToList();
             }
             if (!string.IsNullOrEmpty(coatOfArms))
             {
-                Houses = Houses.Where(b => b.coatOfArms.ToLower().Contains(coatOfArms)).ToList();
+                Houses = Houses.Where(b => b.CoatOfArms.ToLower().Contains(coatOfArms)).ToList();
             }
             if (!string.IsNullOrEmpty(words))
             {
-                Houses = Houses.Where(b => b.words.ToLower().Contains(words)).ToList();
+                Houses = Houses.Where(b => b.Words.ToLower().Contains(words)).ToList();
             }
         }
     }

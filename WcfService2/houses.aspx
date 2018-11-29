@@ -6,6 +6,8 @@
 <head runat="server">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>Houses - Game Of Thrones</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="desktop.css" type="text/css" />
     <link rel="stylesheet" href="print.css" type="text/css" media="print" />
     <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-device-width: 480px)" />
