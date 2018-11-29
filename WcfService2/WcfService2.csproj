@@ -71,6 +71,7 @@
     <Content Include="scripting.js" />
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
+    <Content Include="FormDataPage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="book.cs" />
@@ -94,6 +95,13 @@
     </Compile>
     <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="FormDataPage.aspx.cs">
+      <DependentUpon>FormDataPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FormDataPage.aspx.designer.cs">
+      <DependentUpon>FormDataPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -132,6 +140,11 @@
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
   </ProjectExtensions>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
