@@ -40,7 +40,6 @@
                
                     <label for="TxtWords">Search By Words</label>
                     <asp:TextBox ID="TxtWords" runat="server"></asp:TextBox>
-                    <label for="TxtWords"> OR </label>
                
                     <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
                 </div>
