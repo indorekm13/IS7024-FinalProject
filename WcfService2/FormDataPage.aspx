@@ -25,12 +25,12 @@
             <div>
                 <label for="firstName">First Name</label>
                     <asp:TextBox ID="firstName" runat="server"></asp:TextBox>
-                       <br> 
+                       <br/> 
                     <label for="lastName"> Last Name</label>
                     <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
             </div>
             <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
-            <br>
+            <br/>
             <asp:TextBox ID="DisplayData" TextMode="multiline" width="330px" Height="50px" wrap="true" runat="server"></asp:TextBox>
 	</form>
             <script src="scripting.js" type="text/javascript"></script>

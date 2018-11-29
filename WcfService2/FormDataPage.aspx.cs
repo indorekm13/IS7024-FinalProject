@@ -17,7 +17,6 @@ namespace WcfService2
             details.LastName = lastName.Text.ToLower();
 
             //Convert to json
-
             string displayData = JsonConvert.SerializeObject(details);
 
             DisplayData.Text = displayData;
