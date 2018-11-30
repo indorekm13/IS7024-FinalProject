@@ -10,52 +10,63 @@ using Newtonsoft.Json;
 
 namespace WcfService2
 {
-    public partial class houses : System.Web.UI.Page
+    public partial class Houses : System.Web.UI.Page
     {
-        public List<House> Houses { get; set; }
+        // List of Object House to store Details of House JSON
+        public List<House> HouseList { get; set; }
 
+        // Gets JSON data of House(Royal Families) on Page load
         protected void Page_Load(object sender, EventArgs e)
         {
             using (var webClient = new WebClient())
             {
                 string rawData = webClient.DownloadString("https://www.anapioficeandfire.com/api/houses");
-                Houses = JsonConvert.DeserializeObject<List<House>>(rawData);
+                HouseList = JsonConvert.DeserializeObject<List<House>>(rawData);
             }
         }
 
+        // Displays the details on House Data in form of table
         public string GetTableData()
         {
             string htmlStr = "";
-            foreach (var house in Houses)
+            if (HouseList.Any())
             {
-                if (string.IsNullOrEmpty(house.name))
+                foreach (var house in HouseList)
                 {
-                    house.name = "Not Available";
+                    if (string.IsNullOrEmpty(house.Name))
+                    {
+                        house.Name = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(house.Region))
+                    {
+                        house.Region = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(house.CoatOfArms))
+                    {
+                        house.CoatOfArms = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(house.Words))
+                    {
+                        house.Words = "Not Available";
+                    }
+                    htmlStr += "<tr>" +
+                        "<td>" + house.Name + "</td>" +
+                        "<td>" + house.Region + "</td>" +
+                        "<td>" + house.CoatOfArms + "</td>" +
+                        "<td>" + house.Words + "</td>" +
+                        "<td>" + GetSeatsList(house.Seats) + "</td>" +
+                        "</tr>";
                 }
-                if (string.IsNullOrEmpty(house.region))
-                {
-                    house.region = "Not Available";
-                }
-                if (string.IsNullOrEmpty(house.coatOfArms))
-                {
-                    house.coatOfArms = "Not Available";
-                }
-                if (string.IsNullOrEmpty(house.words))
-                {
-                    house.words = "Not Available";
-                }
-                htmlStr += "<tr>" +
-                    "<td>" + house.name + "</td>" +
-                    "<td>" + house.region + "</td>" +
-                    "<td>" + house.coatOfArms + "</td>" +
-                    "<td>" + house.words + "</td>" +
-                    "<td>" + GetSeatsList(house.seats) + "</td>" +
-                    "</tr>";
+            }
+            else
+            {
+                htmlStr = "<tr> <td colspan=8> No Data Found </td></tr>";
             }
 
             return htmlStr;
         }
 
+        // Displays list of Seats within the table cell
         private string GetSeatsList(List<string> list)
         {
             StringBuilder listString = new StringBuilder();
@@ -78,28 +89,16 @@ namespace WcfService2
             return listString.ToString();
         }
 
-        protected void ButtonSubmit_Click(object sender, EventArgs e)
+        // Filters the House Data based upon the search criteria on click of Submit button
+        protected void ButtonSubmitClick(object sender, EventArgs e)
         {
             var houseName = TxtHouseName.Text.ToLower();
             var region = TxtRegion.Text.ToLower();
             var coatOfArms = TxtCoatOfArms.Text.ToLower();
             var words = TxtWords.Text.ToLower();
-            if (!string.IsNullOrEmpty(houseName))
-            {
-                Houses = Houses.Where(b => b.name.ToLower().Contains(houseName)).ToList();
-            }
-            if (!string.IsNullOrEmpty(region))
-            {
-                Houses = Houses.Where(b => b.region.ToLower().Contains(region)).ToList();
-            }
-            if (!string.IsNullOrEmpty(coatOfArms))
-            {
-                Houses = Houses.Where(b => b.coatOfArms.ToLower().Contains(coatOfArms)).ToList();
-            }
-            if (!string.IsNullOrEmpty(words))
-            {
-                Houses = Houses.Where(b => b.words.ToLower().Contains(words)).ToList();
-            }
+
+            HouseList = HouseList.Where(h => (h.Name.ToLower().Contains(houseName) && h.Region.ToLower().Contains(region)
+            && h.CoatOfArms.ToLower().Contains(coatOfArms) && h.Words.ToLower().Contains(words))).ToList();
         }
     }
 }

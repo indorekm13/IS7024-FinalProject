@@ -1,0 +1,26 @@
+﻿@media print {
+    body {
+        background-color: white;
+    }
+
+    .noprint {
+        display: none;
+    }
+
+    img {
+        display: none
+    }
+
+    .row {
+        display: block
+    }
+
+    h1 {
+        color: black;
+        text-shadow: none;
+    }
+
+    .textcolor {
+        color: black;
+    }
+}

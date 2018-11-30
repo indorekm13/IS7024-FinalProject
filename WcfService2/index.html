@@ -5,12 +5,14 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <title>Game Of Thrones</title>
+    <!-- Styling Sheets for different screens-->
     <link rel="stylesheet" href="desktop.css" type="text/css" />
     <link rel="stylesheet" href="print.css" type="text/css" media="print" />
     <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-device-width: 480px)" />
 </head>
 <body>
-    <div id="mySidenav" class="sidenav">
+    <!--Side Navigation Code-->
+    <div id="mySidenav" class="sidenav noprint">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
         <a href="/index.html">Home</a>
         <a href="/books.aspx">Search Books</a>
@@ -18,9 +20,10 @@
         <a href="/FormDataPage.aspx">Create a JSON</a>
     </div>
     <div id="main">
-        <div>
+        <div class="noprint">
             <span id="menuIcon" onclick="openNav()">&#9776;</span>
         </div>
+        <!--Cover Images Carousel-->
         <div class="w3-content w3-section noprint">
             <img class="mySlides" src="Images/cover.jpg" alt="winter is coming" />
             <img class="mySlides" src="Images/cover2.jpg" alt="game of thrones" />
@@ -31,9 +34,9 @@
             <div class="column">
                 <h2 class="textcolor">Description</h2>
                 <p class="textcolor">
-                    <strong>A Song of Ice and Fire</strong>is a series of epic fantasy novels by the American novelist and screenwriter <em>George R. R. Martin</em>. 
-                    He began the first volume of the series, A Game of Thrones, in 1991, and it was published in 1996. Martin, who initially envisioned the series as a trilogy, 
-                    has published five out of a planned seven volumes. The fifth and most recent volume of the series published in 2011, A Dance with Dragons, 
+                    <strong>A Song of Ice and Fire</strong>is a series of epic fantasy novels by the American novelist and screenwriter <em>George R. R. Martin</em>.
+                    He began the first volume of the series, A Game of Thrones, in 1991, and it was published in 1996. Martin, who initially envisioned the series as a trilogy,
+                    has published five out of a planned seven volumes. The fifth and most recent volume of the series published in 2011, A Dance with Dragons,
                     took Martin six years to write. He is currently writing the sixth novel, The Winds of Winter.
                 </p>
                 <p class="textcolor">
@@ -65,6 +68,7 @@
                 </ul>
             </div>
         </div>
+        <!--Scripting for Carousel and side Navigation-->
         <script src="scripting.js" type="text/javascript"></script>
     </div>
 </body>

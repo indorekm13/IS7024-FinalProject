@@ -1,15 +1,18 @@
-﻿function openNav() {
+﻿// Open Side Navigation
+function openNav() {
     document.getElementById("mySidenav").style.width = "250px";
     document.getElementById("main").style.marginLeft = "250px";
     document.getElementById("menuIcon").style.display = "none";
 }
 
+// Close Side Navigation 
 function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
     document.getElementById("main").style.marginLeft = "0";
     document.getElementById("menuIcon").style.display = "block";
 }
 
+// Carousel for changing cover pictures
 (function () {
 
     var myIndex = 0;

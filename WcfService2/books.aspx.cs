@@ -10,55 +10,65 @@ using Newtonsoft.Json;
 
 namespace WcfService2
 {
-    public partial class books : System.Web.UI.Page
+    public partial class Books : System.Web.UI.Page
     {
-        public List<Book> Books { get; set; }
+        // List of Object Book
+        public List<Book> BookList { get; set; }
 
+        // Gets the JSON of Books on Page Load
         protected void Page_Load(object sender, EventArgs e)
         {
             using (var webClient = new WebClient())
             {
                 string rawData = webClient.DownloadString("https://www.anapioficeandfire.com/api/books");
-                Books = JsonConvert.DeserializeObject<List<Book>>(rawData);
+                BookList = JsonConvert.DeserializeObject<List<Book>>(rawData);
             }
         }
 
+        // Displays JSON of Books in table format
         public string GetTableData()
         {
             string htmlStr = "";
-            foreach (var book in Books)
+            if (BookList.Any())
             {
-                if (string.IsNullOrEmpty(book.name))
+                foreach (var book in BookList)
                 {
-                    book.name = "Not Available";
+                    if (string.IsNullOrEmpty(book.Name))
+                    {
+                        book.Name = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(book.Isbn))
+                    {
+                        book.Isbn = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(book.Country))
+                    {
+                        book.Country = "Not Available";
+                    }
+                    if (string.IsNullOrEmpty(book.MediaType))
+                    {
+                        book.MediaType = "Not Available";
+                    }
+                    htmlStr += "<tr>" +
+                        "<td>" + book.Name + "</td>" +
+                        "<td>" + book.Isbn + "</td>" +
+                        "<td>" + GetAuthorsList(book.Authors) + "</td>" +
+                        "<td>" + book.NumberOfPages + "</td>" +
+                        "<td>" + book.Publisher + "</td>" +
+                        "<td>" + book.Country + "</td>" +
+                        "<td>" + book.MediaType + "</td>" +
+                        "<td>" + book.Released.ToShortDateString() + "</td>" +
+                        "</tr>";
                 }
-                if (string.IsNullOrEmpty(book.isbn))
-                {
-                    book.isbn = "Not Available";
-                }
-                if (string.IsNullOrEmpty(book.country))
-                {
-                    book.country = "Not Available";
-                }
-                if (string.IsNullOrEmpty(book.mediaType))
-                {
-                    book.mediaType = "Not Available";
-                }
-                htmlStr += "<tr>" +
-                    "<td>" + book.name + "</td>" +
-                    "<td>" + book.isbn + "</td>" +
-                    "<td>" + GetAuthorsList(book.authors) + "</td>" +
-                    "<td>" + book.numberOfPages + "</td>" +
-                    "<td>" + book.publisher + "</td>" +
-                    "<td>" + book.country + "</td>" +
-                    "<td>" + book.mediaType + "</td>" +
-                    "<td>" + book.released.ToShortDateString() + "</td>" +
-                    "</tr>";
             }
-
+            else
+            {
+                htmlStr = "<tr> <td colspan=8> No Data Found </td></tr>";
+            }
             return htmlStr;
         }
 
+        // Gets the list of Authors in form of List within the table cell
         private string GetAuthorsList(List<string> list)
         {
             StringBuilder listString = new StringBuilder();
@@ -81,24 +91,16 @@ namespace WcfService2
             return listString.ToString();
         }
 
-        protected void ButtonSubmit_Click(object sender, EventArgs e)
+        // Filters books data according to the filters on click of Submit button
+        protected void ButtonSubmitClick(object sender, EventArgs e)
         {
             var bookName = TxtBookName.Text.ToLower();
             var publisher = TxtPublisher.Text.ToLower();
             var isbn = TxtIsbn.Text.ToLower();
 
-            if (!string.IsNullOrEmpty(bookName))
-            {
-                Books = Books.Where(b => b.name.ToLower().Contains(bookName)).ToList();
-            }
-            if (!string.IsNullOrEmpty(publisher))
-            {
-                Books.AddRange(Books.Where(b => b.publisher.ToLower().Contains(publisher)).ToList());
-            }
-            if (!string.IsNullOrEmpty(isbn))
-            {
-                Books.AddRange(Books.Where(b => b.isbn.ToLower().Contains(isbn)).ToList());
-            }
+            BookList = BookList.Where(b => (b.Name.ToLower().Contains(bookName) && 
+            b.Publisher.ToLower().Contains(publisher) &&
+            b.Isbn.ToLower().Contains(isbn))).ToList();
         }
     }
 }
