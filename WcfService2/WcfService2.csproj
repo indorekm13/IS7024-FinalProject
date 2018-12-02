@@ -1,4 +1,4 @@
-﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -74,13 +74,10 @@
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="FormDataPage.aspx" />
-<<<<<<< HEAD
     <Content Include="aboutus.html" />
-=======
     <Content Include="HouseNamesAutoComplete.aspx" />
     <Content Include="RegionAutoComplete.aspx" />
     <Content Include="CoatofArmsAutoComplete.aspx" />
->>>>>>> f9b7be7a146dc45b9300845379f21d2db616343f
   </ItemGroup>
   <ItemGroup>
     <Compile Include="book.cs" />
