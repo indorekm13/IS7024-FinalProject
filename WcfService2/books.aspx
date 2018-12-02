@@ -30,15 +30,18 @@
         <div class="filter noprint">
             <form id="form1" runat="server">
                 <div>
+                        <div class=" form-row">
                     <label for="bookname">Search By Book Name</label>
                     <asp:TextBox ID="TxtBookName" runat="server"></asp:TextBox>
-
+                    </div>
+                        <div class=" form-row">
                     <label for="TxtPublisher">Search By Publisher</label>
                     <asp:TextBox ID="TxtPublisher" runat="server"></asp:TextBox>
-
+                    </div>
+                        <div class=" form-row">
                     <label for="TxtIsbn">Search By ISBN</label>
                     <asp:TextBox ID="TxtIsbn" runat="server"></asp:TextBox>
-
+                    </div>
                     <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmitClick" />
                 </div>
             </form>
@@ -49,12 +52,12 @@
                 <caption class="textcolor">Details of Books</caption>
                 <tr>
                     <th class="textcolor">Name</th>
-                    <th class="textcolor">ISBN</th>
+                 <th class="textcolor">ISBN</th>
                     <th class="textcolor">Author</th>
-                    <th class="textcolor">Number Of Pages</th>
+                 <th class="textcolor">Number Of Pages</th>
                     <th class="textcolor">Publisher</th>
                     <th class="textcolor">Country</th>
-                    <th class="textcolor">Media Type</th>
+                <th class="textcolor">Media Type</th>
                     <th class="textcolor">Release Date</th>
                 </tr>
                 <%=GetTableData()%>

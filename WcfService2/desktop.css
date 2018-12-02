@@ -7,7 +7,7 @@
 .sidenav {
     height: 100%;
     width: 0;
-    position: fixed;
+        position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
@@ -48,7 +48,7 @@
 }
 
 #menuIcon {
-    position:fixed;
+    position: fixed;
 }
 
 span {
@@ -81,6 +81,7 @@ h1 {
 h2 {
     color: crimson;
 }
+
 h3 {
     color: ghostwhite;
     border-bottom: 1px solid #ccc;
@@ -113,12 +114,12 @@ caption {
 }
 
 table {
-    margin: 5%;
+    margin: 20px 5% 20px 5%;
     width: 90%;
 }
 
 table, th, td {
-    border: 1px solid black;
+            border: 1px solid black;
     border-collapse: collapse;
 }
 
@@ -132,7 +133,7 @@ table tr:nth-child(even) {
 }
 
 table tr:nth-child(odd) {
-    background-color: #fff;
+          background-color: #fff;
 }
 
 table th {
@@ -145,7 +146,8 @@ p {
     color: white;
     opacity: 0.60;
 }
-button {
+
+button    {
     color: #000 !important;
     background-color: #f1f1f1 !important;
     border: none;
@@ -161,8 +163,8 @@ button {
     display: block;
     width: 100%;
 }
-    button:hover 
-    {
+
+    button:hover {
         color: #000 !important;
         background-color: #ccc !important
     }
@@ -172,21 +174,24 @@ button {
     display: table;
     clear: both;
 }
+
 .colpadding {
     padding: 0 15px 0 15px;
     width: 25%;
 }
+
 a.button {
     color: #000 !important;
-    background-color: #f1f1f1 !important;
+          background-color: #f1f1f1 !important;
     border: none;
-    display: inline-block;
+       display: inline-block;
     padding: 8px 16px;
     vertical-align: middle;
-    overflow: hidden;
+      overflow: hidden;
     color: inherit;
     background-color: lightgray;
     text-align: center;
+       
     cursor: pointer;
     white-space: nowrap;
     display: block;
@@ -196,20 +201,21 @@ a.button {
 
 
 #form1 {
-    margin: 25px 0 0 50px;
+       margin: 50px 0 0 0;
+           text-align: center;
 }
 
-    #form1 label {
+.form-row {
+    margin-bottom: 10px;
+}
+
+    .form-row label {
         width: 200px;
         display: inline-block;
+        text-align: left;
     }
 
-#firstName, #lastName, #bookname, #TxtPublisher, #TxtIsbn {
-    display: inline-block;
-    margin-bottom: 20px;
-}
-
 #ButtonSubmit {
-    margin-bottom: 20px;
+    width: 200px;
+    margin: 10px 0 20px 0;
 }
-

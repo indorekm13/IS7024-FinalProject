@@ -16,7 +16,9 @@ function closeNav() {
 (function () {
 
     var myIndex = 0;
-    carousel();
+    if (document.getElementsByClassName("mySlides").length) {
+        carousel();
+    }
 
     function carousel() {
         var i;
