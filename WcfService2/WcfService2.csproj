@@ -74,6 +74,7 @@
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="FormDataPage.aspx" />
+    <Content Include="aboutus.html" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="book.cs" />

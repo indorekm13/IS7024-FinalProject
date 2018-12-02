@@ -81,6 +81,12 @@ h1 {
 h2 {
     color: crimson;
 }
+h3 {
+    color: ghostwhite;
+    border-bottom: 1px solid #ccc;
+    border-color: #f1f1f1;
+    text-align: center;
+}
 
 .filter {
     width: 100%;
@@ -132,4 +138,57 @@ table tr:nth-child(odd) {
 table th {
     background-color: black;
     color: white;
+}
+p {
+    text-align: center;
+    color: white;
+    opacity: 0.60;
+}
+button {
+    color: #000 !important;
+    background-color: #f1f1f1 !important;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    color: inherit;
+    background-color: lightgray;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+}
+    button:hover 
+    {
+        color: #000 !important;
+        background-color: #ccc !important
+    }
+
+.rowpad {
+    content: "";
+    display: table;
+    clear: both;
+}
+.colpadding {
+    padding: 0 15px 0 15px;
+    width: 25%;
+}
+a.button {
+    color: #000 !important;
+    background-color: #f1f1f1 !important;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    color: inherit;
+    background-color: lightgray;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    display: block;
+    width: 100%;
+    text-decoration: none;
 }
