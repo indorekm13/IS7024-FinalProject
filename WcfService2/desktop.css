@@ -139,6 +139,7 @@ table th {
     background-color: black;
     color: white;
 }
+
 p {
     text-align: center;
     color: white;
@@ -192,3 +193,23 @@ a.button {
     width: 100%;
     text-decoration: none;
 }
+
+
+#form1 {
+    margin: 25px 0 0 50px;
+}
+
+    #form1 label {
+        width: 200px;
+        display: inline-block;
+    }
+
+#firstName, #lastName, #bookname, #TxtPublisher, #TxtIsbn {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+#ButtonSubmit {
+    margin-bottom: 20px;
+}
+

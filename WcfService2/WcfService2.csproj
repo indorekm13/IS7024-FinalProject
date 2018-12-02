@@ -74,7 +74,13 @@
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="FormDataPage.aspx" />
+<<<<<<< HEAD
     <Content Include="aboutus.html" />
+=======
+    <Content Include="HouseNamesAutoComplete.aspx" />
+    <Content Include="RegionAutoComplete.aspx" />
+    <Content Include="CoatofArmsAutoComplete.aspx" />
+>>>>>>> f9b7be7a146dc45b9300845379f21d2db616343f
   </ItemGroup>
   <ItemGroup>
     <Compile Include="book.cs" />
@@ -105,6 +111,24 @@
       <DependentUpon>FormDataPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="UserForm.cs" />
+    <Compile Include="HouseNamesAutoComplete.aspx.cs">
+      <DependentUpon>HouseNamesAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HouseNamesAutoComplete.aspx.designer.cs">
+      <DependentUpon>HouseNamesAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegionAutoComplete.aspx.cs">
+      <DependentUpon>RegionAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegionAutoComplete.aspx.designer.cs">
+      <DependentUpon>RegionAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoatofArmsAutoComplete.aspx.cs">
+      <DependentUpon>CoatofArmsAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CoatofArmsAutoComplete.aspx.designer.cs">
+      <DependentUpon>CoatofArmsAutoComplete.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

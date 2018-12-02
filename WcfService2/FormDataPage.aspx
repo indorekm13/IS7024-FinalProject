@@ -24,10 +24,10 @@
 	<form id="form1" runat="server">
             <div>
                 <label for="firstName">First Name</label>
-                    <asp:TextBox ID="firstName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="firstName" runat="server" CssClass="textbox"></asp:TextBox>
                        <br/> 
                     <label for="lastName"> Last Name</label>
-                    <asp:TextBox ID="lastName" runat="server"></asp:TextBox>
+                    <asp:TextBox ID="lastName" runat="server" CssClass="textbox"></asp:TextBox>
             </div>
             <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
             <br/>

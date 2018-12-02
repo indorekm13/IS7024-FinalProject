@@ -15,6 +15,9 @@ namespace WcfService2
         // List of Object House to store Details of House JSON
         public List<House> HouseList { get; set; }
 
+        //List of House Names 
+        public List<string> HouseNames = new List<string>();
+
         // Gets JSON data of House(Royal Families) on Page load
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,7 +26,9 @@ namespace WcfService2
                 string rawData = webClient.DownloadString("https://www.anapioficeandfire.com/api/houses");
                 HouseList = JsonConvert.DeserializeObject<List<House>>(rawData);
             }
+           
         }
+
 
         // Displays the details on House Data in form of table
         public string GetTableData()
