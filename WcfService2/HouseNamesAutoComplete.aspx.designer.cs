@@ -11,18 +11,8 @@
 namespace WcfService2 {
 	
 	
-	public partial class Houses {
+	public partial class HouseNamesAutoComplete {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
-		
-		protected System.Web.UI.WebControls.TextBox TxtHouseName;
-		
-		protected System.Web.UI.WebControls.TextBox TxtRegion;
-		
-		protected System.Web.UI.WebControls.TextBox TxtCoatOfArms;
-		
-		protected System.Web.UI.WebControls.TextBox TxtWords;
-		
-		protected System.Web.UI.WebControls.Button ButtonSubmit;
 	}
 }
