@@ -16,6 +16,7 @@ namespace WcfService2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string term = Request.QueryString["term"];
 
             Response.Clear();
 
@@ -29,7 +30,22 @@ namespace WcfService2
                     ISBNs.Add(x.Isbn);
                 }
             }
-            string responseJSON = JsonConvert.SerializeObject(ISBNs);
+
+            //filtered ISBN List
+
+            List<string> filteredISBN = new List<string>();
+
+            //filtering the ISBN by input
+
+            foreach (string ISBN in ISBNs)
+            {
+                if (ISBN.Contains(term))
+                {
+                    filteredISBN.Add(ISBN);
+
+                }
+            }
+            string responseJSON = JsonConvert.SerializeObject(filteredISBN);
 
             Response.Write(responseJSON);
 

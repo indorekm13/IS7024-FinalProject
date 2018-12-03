@@ -16,6 +16,7 @@ namespace WcfService2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string term = Request.QueryString["term"];
 
             Response.Clear();
 
@@ -29,8 +30,23 @@ namespace WcfService2
                     CoatofArms.Add(x.CoatOfArms);
                 }
             }
+            //filtered Coat of Arms List
 
-            string responseJSON = JsonConvert.SerializeObject(CoatofArms);
+            List<string> filteredCOA= new List<string>();
+
+            //filtering the coat of arms by input
+
+            foreach (string coa in CoatofArms)
+            {
+                if (coa.Contains(term))
+                {
+                    filteredCOA.Add(coa);
+
+                }
+            }
+
+
+            string responseJSON = JsonConvert.SerializeObject(filteredCOA);
 
             Response.Write(responseJSON);
 

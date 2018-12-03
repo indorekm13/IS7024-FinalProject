@@ -16,6 +16,7 @@ namespace WcfService2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string term = Request.QueryString["term"];
 
             Response.Clear();
 
@@ -29,7 +30,22 @@ namespace WcfService2
                     BookNames.Add(x.Name);
                 }
             }
-            string responseJSON = JsonConvert.SerializeObject(BookNames);
+            //filtered Book List
+
+            List<string> filteredBooks = new List<string>();
+
+            //filtering the Books by input
+
+            foreach (string book in BookNames)
+            {
+                if (book.Contains(term))
+                {
+                    filteredBooks.Add(book);
+
+                }
+            }
+
+            string responseJSON = JsonConvert.SerializeObject(filteredBooks);
 
             Response.Write(responseJSON);
 

@@ -17,7 +17,7 @@ namespace WcfService2
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            // string search = Request.QueryString["search"];
+            string term = Request.QueryString["term"];
 
             Response.Clear();
 
@@ -32,20 +32,21 @@ namespace WcfService2
                 }
             }
 
-            ////filtered HouseNames List
+            //filtered HouseNames List
 
-            //List<string> filteredHouseNames = new List<string>();
+            List<string> filteredWords = new List<string>();
 
-            ////filtering the HouseNames by input
+            //filtering the words by input
 
-            //foreach(string name in HouseNames){
-            //    if(name.Contains(search)){
-            //        filteredHouseNames.Add(name);
+            foreach(string word in Words)
+            {
+                if(word.Contains(term)){
+                    filteredWords.Add(word);
 
-            //    }
-            //}
+                }
+            }
 
-            string responseJSON = JsonConvert.SerializeObject(Words);
+            string responseJSON = JsonConvert.SerializeObject(filteredWords);
 
             Response.Write(responseJSON);
 

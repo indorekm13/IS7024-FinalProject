@@ -16,6 +16,7 @@ namespace WcfService2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string term = Request.QueryString["term"];
 
             Response.Clear();
 
@@ -29,7 +30,21 @@ namespace WcfService2
                     PublisherNames.Add(x.Publisher);
                 }
             }
-            string responseJSON = JsonConvert.SerializeObject(PublisherNames);
+            //filtered Publisher List
+
+            List<string> filteredPublishers = new List<string>();
+
+            //filtering the publishers by input
+
+            foreach (string publisher in PublisherNames)
+            {
+                if (publisher.Contains(term))
+                {
+                    filteredPublishers.Add(publisher);
+
+                }
+            }
+            string responseJSON = JsonConvert.SerializeObject(filteredPublishers);
 
             Response.Write(responseJSON);
 

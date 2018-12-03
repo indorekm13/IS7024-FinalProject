@@ -16,6 +16,7 @@ namespace WcfService2
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            string term = Request.QueryString["term"];
 
             Response.Clear();
 
@@ -29,8 +30,22 @@ namespace WcfService2
                     Regions.Add(x.Region);
                 }
             }
+            //filtered Regions List
 
-            string responseJSON = JsonConvert.SerializeObject(Regions);
+            List<string> filteredRegions= new List<string>();
+
+            //filtering the regions by input
+
+            foreach (string regions in Regions)
+            {
+                if (regions.Contains(term))
+                {
+                    filteredRegions.Add(regions);
+
+                }
+            }
+
+            string responseJSON = JsonConvert.SerializeObject(filteredRegions);
 
             Response.Write(responseJSON);
 
