@@ -38,7 +38,7 @@ namespace WcfService2
 
             foreach (string coa in CoatofArms)
             {
-                if (coa.Contains(term))
+                if (coa.ToLower().Contains(term.ToLower()))
                 {
                     filteredCOA.Add(coa);
 

@@ -38,7 +38,7 @@ namespace WcfService2
 
             foreach (string book in BookNames)
             {
-                if (book.Contains(term))
+                if (book.ToLower().Contains(term.ToLower()))
                 {
                     filteredBooks.Add(book);
 

@@ -38,7 +38,7 @@ namespace WcfService2
 
             foreach (string publisher in PublisherNames)
             {
-                if (publisher.Contains(term))
+                if (publisher.ToLower().Contains(term.ToLower()))
                 {
                     filteredPublishers.Add(publisher);
 

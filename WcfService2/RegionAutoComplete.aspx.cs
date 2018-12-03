@@ -38,7 +38,7 @@ namespace WcfService2
 
             foreach (string regions in Regions)
             {
-                if (regions.Contains(term))
+                if (regions.ToLower().Contains(term.ToLower()))
                 {
                     filteredRegions.Add(regions);
 

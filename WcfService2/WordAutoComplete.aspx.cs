@@ -40,7 +40,7 @@ namespace WcfService2
 
             foreach(string word in Words)
             {
-                if(word.Contains(term)){
+                if(word.ToLower().Contains(term.ToLower())){
                     filteredWords.Add(word);
 
                 }

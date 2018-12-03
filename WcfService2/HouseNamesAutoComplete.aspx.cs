@@ -38,7 +38,7 @@ namespace WcfService2
             //filtering the HouseNames by input
 
             foreach(string name in HouseNames){
-                if(name.Contains(term)){
+                if(name.ToLower().Contains(term.ToLower())){
                     filteredHouseNames.Add(name);
 
                 }

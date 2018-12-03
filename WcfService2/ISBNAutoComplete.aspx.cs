@@ -39,7 +39,7 @@ namespace WcfService2
 
             foreach (string ISBN in ISBNs)
             {
-                if (ISBN.Contains(term))
+                if (ISBN.ToLower().Contains(term.ToLower()))
                 {
                     filteredISBN.Add(ISBN);
 
