@@ -35,7 +35,7 @@
         <a href="/books.aspx">Search Books</a>
         <a href="/houses.aspx">Search Houses</a>
         <a href="/FormDataPage.aspx">Create a JSON</a>
-            <a href="/aboutus.html">About Us</a>
+        <a href="/aboutus.html">About Us</a>
     </div>
     <div id="main">
         <div>
@@ -47,21 +47,21 @@
         <div class="filter noprint">
             <form id="form1" runat="server">
                 <div>
-                        <div class=" form-row">
-                <label for="TxtHouseName">Search By House Name</label>
-                    <asp:TextBox ID="TxtHouseName" runat="server"></asp:TextBox>
-                        </div>
-                        <div class=" form-row">
-                    <label for="TxtRegion">Search By Region</label>
-                    <asp:TextBox ID="TxtRegion" runat="server"></asp:TextBox>
-                        </div>
-                            <div class=" form-row">
-                    <label for="TxtCoatOfArms">Search By Coat Of Arms</label>
-                <asp:TextBox ID="TxtCoatOfArms" runat="server"></asp:TextBox>
+                    <div class=" form-row">
+                        <label for="TxtHouseName">Search By House Name</label>
+                        <asp:TextBox ID="TxtHouseName" runat="server"></asp:TextBox>
                     </div>
-                    <div class=" form-row"> 
-                    <label for="TxtWords">Search By Words</label>
-                 <asp:TextBox ID="TxtWords" runat="server"></asp:TextBox>
+                    <div class=" form-row">
+                        <label for="TxtRegion">Search By Region</label>
+                        <asp:TextBox ID="TxtRegion" runat="server"></asp:TextBox>
+                    </div>
+                    <div class=" form-row">
+                        <label for="TxtCoatOfArms">Search By Coat Of Arms</label>
+                        <asp:TextBox ID="TxtCoatOfArms" runat="server"></asp:TextBox>
+                    </div>
+                    <div class=" form-row">
+                        <label for="TxtWords">Search By Words</label>
+                        <asp:TextBox ID="TxtWords" runat="server"></asp:TextBox>
                     </div>
                     <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmitClick" />
                 </div>
@@ -78,7 +78,7 @@
                     <th class="textcolor">Words</th>
                     <th class="textcolor">Seats</th>
                 </tr>
-               <%=GetTableData()%>
+                <%=GetTableData()%>
             </table>
         </div>
         <!-- Javascript for Side Navigation -->
