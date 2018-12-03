@@ -15,9 +15,13 @@ namespace WcfService2 {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
-		protected System.Web.UI.WebControls.TextBox firstName;
+		protected System.Web.UI.WebControls.TextBox charName;
 		
-		protected System.Web.UI.WebControls.TextBox lastName;
+		protected System.Web.UI.WebControls.TextBox actorName;
+		
+		protected System.Web.UI.WebControls.TextBox houseName;
+		
+		protected System.Web.UI.WebControls.TextBox DOA;
 		
 		protected System.Web.UI.WebControls.Button ButtonSubmit;
 		

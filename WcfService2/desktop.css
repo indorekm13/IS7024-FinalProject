@@ -1,7 +1,7 @@
 ﻿body {
     background-image: url("images/background.png");
     background-repeat: no-repeat;
-    background-size: cover
+    background-size: cover;
 }
 
 .sidenav {
@@ -44,7 +44,7 @@
 
 #main {
     transition: margin-left .5s;
-    padding: 16px;
+    padding: 12px;
 }
 
 #menuIcon {
@@ -57,8 +57,12 @@ span {
     color: white;
 }
 
-img {
+img.mySlides {
     height: 18em;
+    width: 100%;
+}
+img {
+    height: 350px;
     width: 100%;
 }
 
@@ -79,6 +83,7 @@ h1 {
 }
 
 h2 {
+    text-align:center;
     color: crimson;
 }
 
@@ -99,7 +104,8 @@ h3 {
     float: left;
     padding-left: 2%;
     padding-right: 2%;
-    text-align: justify
+    text-align: left;
+    width: 55%;
 }
 
 .row {
@@ -144,6 +150,11 @@ table th {
 p {
     text-align: center;
     color: white;
+    opacity: 0.60;
+}
+li {
+    text-align: left;
+
     opacity: 0.60;
 }
 

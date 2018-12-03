@@ -10,6 +10,22 @@
     <link rel="stylesheet" href="desktop.css" type="text/css" />
     <link rel="stylesheet" href="print.css" type="text/css" media="print" />
     <link rel="stylesheet" href="mobile.css" type="text/css" media="screen and (max-device-width: 480px)" />
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $(function () {
+            $("#TxtBookName").autocomplete({
+                source: "BookNameAutoComplete.aspx"
+            });
+            $("#TxtPublisher").autocomplete({
+                source: "PublisherAutoComplete.aspx"
+            });
+            $("#TxtIsbn").autocomplete({
+                source: "ISBNAutoComplete.aspx"
+            });
+        });
+    </script>
 </head>
 <body>
     <!--Cover Images Carousel-->

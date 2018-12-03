@@ -14,21 +14,32 @@
         <a href="/index.html">Home</a>
         <a href="/books.aspx">Search Book</a>
         <a href="/houses.aspx">Search Houses</a>
-        <a href="/FormDataPage.aspx">Create a JSON</a>
+        <a href="/FormDataPage.aspx">Create a JSON </a>
             <a href="/aboutus.html">About Us</a>
     </div>
          <div id="main">
         <div>
             <span id="menuIcon" onclick="openNav()">&#9776;</span>
-            <h1 class="textcolor">Creating a JSON from User Form</h1>
+            <h1 class="textcolor">Creating a JSON of the GOT Series Cast</h1>
         </div>
 	<form id="form1" runat="server">
             <div>
-                <label for="firstName">First Name</label>
-                    <asp:TextBox ID="firstName" runat="server" CssClass="textbox"></asp:TextBox>
-                       <br/> 
-                    <label for="lastName"> Last Name</label>
-                    <asp:TextBox ID="lastName" runat="server" CssClass="textbox"></asp:TextBox>
+                    <div class=" form-row">
+                <label for="charName">Character Name</label>
+                    <asp:TextBox ID="charName" runat="server" CssClass="textbox"></asp:TextBox>
+                       </div>
+                    <div class=" form-row">
+                    <label for="actorName">Actor or Actress </label>
+                    <asp:TextBox ID="actorName" runat="server" CssClass="textbox"></asp:TextBox>
+                        </div>
+                    <div class=" form-row">
+                    <label for="houseName"> House Name</label>
+                    <asp:TextBox ID="houseName" runat="server" CssClass="textbox"></asp:TextBox>
+                        </div>
+                    <div class=" form-row">
+                    <label for="DOA">Dead or Alive </label>
+                    <asp:TextBox ID="DOA" runat="server" CssClass="textbox"></asp:TextBox>
+                        </div>
             </div>
             <asp:Button ID="ButtonSubmit" runat="server" Text="Submit" OnClick="ButtonSubmit_Click" />
             <br/>

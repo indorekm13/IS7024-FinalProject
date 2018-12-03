@@ -11,8 +11,10 @@ namespace WcfService2
         protected void ButtonSubmit_Click(object sender, EventArgs e)
         {
             UserForm details = new UserForm();
-            details.FirstName = firstName.Text.ToLower();
-            details.LastName = lastName.Text.ToLower();
+            details.Character = charName.Text.ToLower();
+            details.Actor = actorName.Text.ToLower();
+            details.House = houseName.Text.ToLower();
+            details.DOA = DOA.Text.ToLower();
 
             //Convert to json
             string displayData = JsonConvert.SerializeObject(details);

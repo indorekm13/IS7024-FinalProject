@@ -78,6 +78,10 @@
     <Content Include="HouseNamesAutoComplete.aspx" />
     <Content Include="RegionAutoComplete.aspx" />
     <Content Include="CoatofArmsAutoComplete.aspx" />
+    <Content Include="BookNameAutoComplete.aspx" />
+    <Content Include="PublisherAutoComplete.aspx" />
+    <Content Include="ISBNAutoComplete.aspx" />
+    <Content Include="WordAutoComplete.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="book.cs" />
@@ -125,6 +129,30 @@
     </Compile>
     <Compile Include="CoatofArmsAutoComplete.aspx.designer.cs">
       <DependentUpon>CoatofArmsAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookNameAutoComplete.aspx.cs">
+      <DependentUpon>BookNameAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BookNameAutoComplete.aspx.designer.cs">
+      <DependentUpon>BookNameAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublisherAutoComplete.aspx.cs">
+      <DependentUpon>PublisherAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PublisherAutoComplete.aspx.designer.cs">
+      <DependentUpon>PublisherAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ISBNAutoComplete.aspx.cs">
+      <DependentUpon>ISBNAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ISBNAutoComplete.aspx.designer.cs">
+      <DependentUpon>ISBNAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WordAutoComplete.aspx.cs">
+      <DependentUpon>WordAutoComplete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WordAutoComplete.aspx.designer.cs">
+      <DependentUpon>WordAutoComplete.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,9 @@
             $("#TxtCoatOfArms").autocomplete({
                 source: "CoatofArmsAutoComplete.aspx"
             });
+             $("#TxtWords").autocomplete({
+                source: "WordAutoComplete.aspx"
+            });
         });
     </script>
 </head>
