@@ -31,9 +31,9 @@ namespace WcfService2
                 }
             }
 
-            //filtered ISBN List
+            //filtered ISBN HashSet
 
-            List<string> filteredISBN = new List<string>();
+            HashSet<string> filteredISBN = new HashSet<string>();
 
             //filtering the ISBN by input
 

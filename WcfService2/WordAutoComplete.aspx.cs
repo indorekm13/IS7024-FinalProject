@@ -32,9 +32,9 @@ namespace WcfService2
                 }
             }
 
-            //filtered HouseNames List
+            //filtered HouseNames HashSet
 
-            List<string> filteredWords = new List<string>();
+            HashSet<string> filteredWords = new HashSet<string>();
 
             //filtering the words by input
 

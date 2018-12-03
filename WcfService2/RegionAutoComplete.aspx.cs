@@ -30,9 +30,9 @@ namespace WcfService2
                     Regions.Add(x.Region);
                 }
             }
-            //filtered Regions List
+            //filtered Regions HashSet
 
-            List<string> filteredRegions= new List<string>();
+            HashSet<string> filteredRegions = new HashSet<string>();
 
             //filtering the regions by input
 

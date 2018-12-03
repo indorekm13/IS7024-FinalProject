@@ -30,9 +30,9 @@ namespace WcfService2
                     CoatofArms.Add(x.CoatOfArms);
                 }
             }
-            //filtered Coat of Arms List
+            //filtered Coat of Arms HashSet
 
-            List<string> filteredCOA= new List<string>();
+            HashSet<string> filteredCOA = new HashSet<string>();
 
             //filtering the coat of arms by input
 

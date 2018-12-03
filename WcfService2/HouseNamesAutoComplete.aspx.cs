@@ -14,9 +14,10 @@ namespace WcfService2
 
         public List<string> HouseNames = new List<string>();
 
-        protected void Page_Load(object sender, EventArgs e){
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-           string term = Request.QueryString["term"];
+            string term = Request.QueryString["term"];
 
             Response.Clear();
 
@@ -31,20 +32,22 @@ namespace WcfService2
                 }
             }
 
-            //filtered HouseNames List
+            //filtered HouseNames HashSet
 
-            List<string> filteredHouseNames = new List<string>();
+            HashSet<string> filteredHouseNames = new HashSet<string>();
 
             //filtering the HouseNames by input
 
-            foreach(string name in HouseNames){
-                if(name.ToLower().Contains(term.ToLower())){
+            foreach (string name in HouseNames)
+            {
+                if (name.ToLower().Contains(term.ToLower()))
+                {
                     filteredHouseNames.Add(name);
 
                 }
             }
 
-            string responseJSON= JsonConvert.SerializeObject(filteredHouseNames);
+            string responseJSON = JsonConvert.SerializeObject(filteredHouseNames);
 
             Response.Write(responseJSON);
 

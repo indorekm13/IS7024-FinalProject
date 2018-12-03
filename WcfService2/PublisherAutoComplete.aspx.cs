@@ -14,6 +14,7 @@ namespace WcfService2
 
         public List<string> PublisherNames = new List<string>();
 
+
         protected void Page_Load(object sender, EventArgs e)
         {
             string term = Request.QueryString["term"];
@@ -30,9 +31,9 @@ namespace WcfService2
                     PublisherNames.Add(x.Publisher);
                 }
             }
-            //filtered Publisher List
+            //filtered Publisher HashSet
 
-            List<string> filteredPublishers = new List<string>();
+            HashSet<string> filteredPublishers = new HashSet<string>();
 
             //filtering the publishers by input
 

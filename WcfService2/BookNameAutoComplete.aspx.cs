@@ -30,9 +30,9 @@ namespace WcfService2
                     BookNames.Add(x.Name);
                 }
             }
-            //filtered Book List
+            //filtered Book HashSet
 
-            List<string> filteredBooks = new List<string>();
+            HashSet<string> filteredBooks = new HashSet<string>();
 
             //filtering the Books by input
 
