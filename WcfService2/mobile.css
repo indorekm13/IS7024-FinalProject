@@ -1,4 +1,4 @@
-﻿@media screen and (max-height: 480px) {
+﻿@media screen and (max-device-width: 480px) {
     .sidenav {
         padding-top: 15px;
     }
@@ -8,6 +8,6 @@
         }
 
     .row {
-        display: block
+        display: block;
     }
 }
